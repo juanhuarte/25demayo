@@ -1,12 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import Hombres from './Hombres'
 import Mujeres from './Mujeres'
 
-const PorSexo = ({ personas, borrarPersona }) => {
+const PorSexo = () => {
+   // const { dia, hora } = useSelector((state) => state)
    return (
       <div className='container_porsexo'>
-         <Hombres personas={personas} borrarPersona={borrarPersona} />
-         <Mujeres personas={personas} borrarPersona={borrarPersona} />
+         {/* <h1>
+            {dia} - {hora} */}
+         {/* </h1> */}
+         <Hombres />
+         <Mujeres />
       </div>
    )
 }

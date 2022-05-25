@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import Persona from './Persona'
 
-const Mujeres = ({ personas, borrarPersona }) => {
+const Mujeres = () => {
+   const personas = useSelector((state) =>
+      state.personas.filter((p) => p.sexo === 'F')
+   )
    return (
       <div className='container_mujeres'>
          {personas.map((persona) => {
-            if (persona.sexo === 'F')
-               return (
-                  <Persona persona={persona} borrarPersona={borrarPersona} />
-               )
+            return <Persona persona={persona} />
          })}
       </div>
    )

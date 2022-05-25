@@ -1,24 +1,29 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import './App.css'
 import PorSexo from './PorSexo'
+import { fetchData } from './redux/actions'
 import Todos from './Todos'
 
 const App = () => {
-   const [personas, setPersonas] = useState([])
+   // va a estar conectado en redux en modo ESCRITURA
+   const dispatch = useDispatch()
    useEffect(() => {
-      fetch('http://localhost:4000/api')
-         .then((res) => res.json())
-         .then((data) => setPersonas(data.response))
-         .catch((e) => console.log(e))
+      dispatch(fetchData())
    }, [])
-   const borrarPersona = (nombre) => {
-      setPersonas(personas.filter((p) => p.nombre !== nombre))
-   }
-
    return (
       <div className='container_app'>
-         <Todos personas={personas} borrarPersona={borrarPersona} />
-         <PorSexo personas={personas} borrarPersona={borrarPersona} />
+         {/* <button
+            onClick={() => {
+               dispatch({
+                  type: 'ACTUALIZAR_HORA',
+                  payload: new Date().toLocaleTimeString(),
+               })
+            }}>
+            Actualizar Hora
+         </button> */}
+         <Todos />
+         <PorSexo />
       </div>
    )
 }
