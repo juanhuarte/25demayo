@@ -1,0 +1,59 @@
+html * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   color: white;
+   font-weight: bold;
+}
+
+div.container_app {
+   height: 100vh;
+   background-color: yellow;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+div.container_todos,
+div.container_porsexo {
+   height: 80vh;
+   width: 40%;
+}
+
+div.container_todos {
+   background-color: black;
+}
+
+div.container_porsexo {
+   background-color: green;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+}
+
+div.container_hombres,
+div.container_mujeres {
+   width: 80%;
+   height: 35vh;
+   background-color: blue;
+}
+
+div.container_mujeres {
+   width: 80%;
+   height: 35vh;
+   background-color: red;
+}
+
+div.persona {
+   display: flex;
+   justify-content: space-between;
+   width: 50%;
+   margin-bottom: 2vh;
+   padding: 1vh 2vw;
+   background-color: purple;
+}
