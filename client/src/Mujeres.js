@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import PersonasContext from './context/personas-context'
 import Persona from './Persona'
 
-const Mujeres = ({ personas, borrarPersona }) => {
+const Mujeres = () => {
    return (
-      <div className='container_mujeres'>
-         {personas.map((persona) => {
-            if (persona.sexo === 'F')
-               return (
-                  <Persona persona={persona} borrarPersona={borrarPersona} />
-               )
-         })}
-      </div>
+      <PersonasContext.Consumer>
+         {({ personas }) => {
+            return (
+               <div className='container_mujeres'>
+                  {personas.map((persona) => {
+                     if (persona.sexo === 'F')
+                        return <Persona key={Math.random()} persona={persona} />
+                  })}
+               </div>
+            )
+         }}
+      </PersonasContext.Consumer>
    )
 }
 

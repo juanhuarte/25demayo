@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import PersonasContext from './context/personas-context'
 import Persona from './Persona'
 
-const Todos = ({ personas, borrarPersona }) => {
+const Todos = () => {
+   const { personas } = useContext(PersonasContext)
    return (
       <div className='container_todos'>
          {personas.map((persona) => {
-            return <Persona persona={persona} borrarPersona={borrarPersona} />
+            return <Persona key={Math.random()} persona={persona} />
          })}
       </div>
    )

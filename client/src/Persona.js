@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import PersonasContext from './context/personas-context'
 
-const Persona = ({ persona, borrarPersona }) => {
+const Persona = ({ persona }) => {
+   const { borrarPersona } = useContext(PersonasContext)
    return (
       <div className='persona'>
          <h3>{persona.nombre}</h3>

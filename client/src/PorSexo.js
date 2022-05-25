@@ -2,11 +2,11 @@ import React from 'react'
 import Hombres from './Hombres'
 import Mujeres from './Mujeres'
 
-const PorSexo = ({ personas, borrarPersona }) => {
+const PorSexo = () => {
    return (
       <div className='container_porsexo'>
-         <Hombres personas={personas} borrarPersona={borrarPersona} />
-         <Mujeres personas={personas} borrarPersona={borrarPersona} />
+         <Hombres />
+         <Mujeres />
       </div>
    )
 }
